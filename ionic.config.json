@@ -1,0 +1,7 @@
+{
+  "name": "swiper-ionic-v7",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
