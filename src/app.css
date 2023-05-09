@@ -1,0 +1,33 @@
+#app {
+  height: 100%;
+}
+
+span.swiper-pagination-bullet-active {
+  background-color: lightcoral !important;
+  opacity: 1 !important;
+}
+
+.swiper {
+  width: auto;
+  height: 90vh;
+  overflow: auto;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #817272;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

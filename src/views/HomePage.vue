@@ -1,56 +1,47 @@
 <template>
   <ion-page>
-    <ion-header :translucent="true">
-      <ion-toolbar>
-        <ion-title>Blank</ion-title>
-      </ion-toolbar>
+    <ion-header>
+      <ion-toolbar></ion-toolbar>
     </ion-header>
-
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Blank</ion-title>
-        </ion-toolbar>
-      </ion-header>
-
-      <div id="container">
-        <strong>Ready to create an app?</strong>
-        <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+    <ion-content class="ion-padding">
+    <ion-button router-link="/photo"></ion-button>
+      <swiper
+        :modules="modules"
+        :autoplay="false"
+        :keyboard="true"
+        :pagination="true"
+        :scrollbar="false"
+        :navigation="true"
+        :zoom="true"
+        @navigation-next="navigationNext"
+        space-between="30"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper>
     </ion-content>
   </ion-page>
 </template>
-
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import {} from "vue";
+import { Navigation, Keyboard, Pagination, Scrollbar, Zoom } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { IonContent, IonPage, IonHeader, IonToolbar, IonButton } from "@ionic/vue";
+
+import "swiper/css";
+// import "swiper/css/autoplay";
+import "swiper/css/keyboard";
+import 'swiper/css/navigation';
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/zoom";
+// import "@ionic/vue/css/ionic-swiper.css";
+
+const modules = [ Keyboard, Pagination, Zoom, Navigation];
+
+const navigationNext = () => {
+  // debugger;
+}
 </script>
 
-<style scoped>
-#container {
-  text-align: center;
-  
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  
-  color: #8c8c8c;
-  
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-</style>

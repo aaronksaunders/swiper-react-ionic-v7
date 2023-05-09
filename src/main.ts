@@ -23,6 +23,9 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+import './app.css'
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
@@ -30,3 +33,6 @@ const app = createApp(App)
 router.isReady().then(() => {
   app.mount('#app');
 });
+
+// Call the element loader after the platform has been bootstrapped
+// defineCustomElements(window);
